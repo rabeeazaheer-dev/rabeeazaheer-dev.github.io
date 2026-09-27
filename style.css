@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #e2e8f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.background-glow {
+    position: fixed;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 25px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #f8fafc;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.btn-nav {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+    color: #f8fafc;
+    border-color: #38bdf8;
+}
+
+.hero {
+    padding: 80px 0 60px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #f8fafc;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.highlight {
+    color: #f8fafc;
+    font-weight: 600;
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.primary {
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.25);
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(56, 189, 248, 0.4);
+}
+
+.secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding-bottom: 60px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    border-color: rgba(56, 189, 248, 0.4);
+    transform: translateY(-6px);
+}
+
+.card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #f8fafc;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.float-animation {
+    animation: float 5s ease-in-out infinite;
+}
+
+.delay-1 {
+    animation-delay: 1.5s;
+}
+
+.delay-2 {
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+footer {
+    padding: 30px 0;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.hero-btns .secondary {
+    background: #0a66c2;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 20px rgba(10, 102, 194, 0.3);
+}
+
+.hero-btns .secondary:hover {
+    background: #004182;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(10, 102, 194, 0.5);
+}
