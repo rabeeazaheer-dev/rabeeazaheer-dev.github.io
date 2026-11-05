@@ -1,56 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rabeea Zaheer | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rabeea Zaheer — Frontend Developer specializing in React and responsive web experiences.">
+  <meta name="theme-color" content="#0b0f19">
+  <title>Rabeea Zaheer | Frontend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind Play CDN: convenient for this static portfolio. For a larger production app, install Tailwind as a build dependency. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { ink: '#0b0f19', cyan: '#38bdf8', muted: '#94a3b8' }, fontFamily: { sans: ['Inter', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="background-glow"></div>
+<body class="bg-ink text-slate-200 font-sans antialiased">
+  <div class="background-glow" aria-hidden="true"></div>
+  <header class="sticky top-0 z-30 border-b border-white/5 bg-ink/75 backdrop-blur-xl">
+    <nav class="container mx-auto flex min-h-[76px] items-center justify-between px-5" aria-label="Main navigation">
+      <a href="#home" class="text-lg font-extrabold tracking-tight text-white">Rabeea Zaheer<span class="text-cyan">.dev</span></a>
+      <div class="hidden items-center gap-7 text-sm font-medium text-slate-400 md:flex">
+        <a class="nav-link" href="#about">About</a><a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a><a class="nav-link" href="#contact">Contact</a>
+      </div>
+      <a class="hidden rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:border-cyan hover:text-white sm:inline-flex" href="https://github.com/rabeeazaheer-dev" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <button id="menuButton" class="rounded-lg border border-white/10 px-3 py-2 text-slate-200 md:hidden" aria-label="Open menu" aria-expanded="false">☰</button>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-white/5 bg-ink/95 px-5 py-4 md:hidden">
+      <div class="container mx-auto flex flex-col gap-4 text-slate-300"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+    </div>
+  </header>
 
-    <header>
-        <div class="container navbar">
-            <h1 class="logo">Rabeea Zaheer<span>.dev</span></h1>
-            <a href="https://github.com/rabeeazaheer-dev" target="_blank" class="btn-nav">GitHub Profile</a>
+  <main class="container mx-auto max-w-6xl px-5">
+    <section id="home" class="hero-section py-24 text-center sm:py-32">
+      <div class="fade-up mx-auto max-w-4xl">
+        <span class="badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"><span class="availability-dot"></span> Computer Science Student · Open to opportunities</span>
+        <p class="mt-8 text-sm font-semibold uppercase tracking-[.25em] text-slate-400">Hi, I’m Rabeea Zaheer</p>
+        <h1 class="mt-4 text-4xl font-extrabold leading-tight tracking-[-.045em] text-white sm:text-6xl lg:text-7xl">I build <span class="gradient-text">beautiful web experiences.</span></h1>
+        <div class="role-line mt-5 text-xl font-semibold text-slate-300 sm:text-2xl">I’m a <span id="typedRole" class="text-cyan"></span><span class="typing-cursor" aria-hidden="true">|</span></div>
+        <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">I turn ideas into clean, responsive interfaces with React, JavaScript, HTML, and CSS—with care for the details that make a product feel great.</p>
+        <div class="mt-9 flex flex-wrap justify-center gap-4">
+          <a class="button-primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+          <a class="button-secondary" href="mailto:rabeeazaheer9@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
         </div>
-    </header>
+        <div class="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-slate-400">
+          <a class="social-link" href="https://github.com/rabeeazaheer-dev" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a class="social-link" href="https://www.linkedin.com/in/rabeea-zaheer-codenova" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="social-link" href="mailto:rabeeazaheer9@gmail.com">Email ↗</a>
+        </div>
+      </div>
+    </section>
 
-    <main class="container">
-        <section class="hero">
-            <div class="badge">Computer Science Student</div>
-            <h1 class="title">Frontend Web Developer</h1>
-            <p class="subtitle">
-                Crafting clean, interactive user interfaces and actively expanding into <span class="highlight">Node.js</span> & <span class="highlight">React.js</span>.
-            </p>
-            <div class="hero-btns">
-                <a href="https://github.com/rabeeazaheer-dev" target="_blank" class="btn primary">Explore My GitHub</a>
-                <a href="https://linkedin.com" target="_blank" class="btn primary">LinkedIn</a>
-            </div>
-        </section>
+    <section id="about" class="section-pad scroll-mt-24">
+      <div class="section-heading"><span class="section-kicker">A little about me</span><h2>Curious by nature. <span class="gradient-text">Developer by choice.</span></h2><p>I’m a computer science student who loves making useful, friendly web experiences.</p></div>
+      <div class="about-panel mx-auto max-w-4xl rounded-2xl p-6 sm:p-9">
+        <p class="leading-8 text-slate-300">I’m Rabeea Zaheer, a Frontend Developer and BSCS student at the University of Agriculture, Faisalabad. My work focuses on building modern, responsive interfaces with HTML5, CSS3, JavaScript, and React.js.</p>
+        <p class="mt-4 leading-8 text-slate-400">I enjoy turning designs into polished, accessible pages, creating interactive tools, and connecting interfaces to APIs. I care about clean code, thoughtful details, and continuing to learn.</p>
+        <div class="mt-7 grid gap-3 sm:grid-cols-3">
+          <div class="fact-card"><span>Education</span><strong>BS Computer Science</strong></div>
+          <div class="fact-card"><span>University</span><strong>UAF, Faisalabad</strong></div>
+          <div class="fact-card"><span>Certificates</span><strong>DigiSkills courses</strong></div>
+        </div>
+      </div>
+    </section>
 
-        <section class="focus-grid">
-            <div class="card float-animation">
-                <div class="card-icon">⚡</div>
-                <h3>Frontend Engineering</h3>
-                <p>Building responsive, dynamic, and intuitive user web experiences.</p>
-            </div>
-            <div class="card float-animation delay-1">
-                <div class="card-icon">⚙️</div>
-                <h3>Node.js Backend</h3>
-                <p>Expanding backend capabilities for efficient data flows and scalable applications.</p>
-            </div>
-            <div class="card float-animation delay-2">
-                <div class="card-icon">⚛️</div>
-                <h3>React.js Roadmap</h3>
-                <p>Actively learning React ecosystem to build modern component-based SPA frontend apps.</p>
-            </div>
-        </section>
-    </main>
+    <section id="skills" class="section-pad scroll-mt-24">
+      <div class="section-heading"><span class="section-kicker">My toolkit</span><h2>Skills & services</h2><p>Frontend tools and services I use to bring ideas to life.</p></div>
+      <div class="mx-auto max-w-4xl">
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="skill-chip">HTML5</span><span class="skill-chip">CSS3</span><span class="skill-chip">JavaScript ES6+</span><span class="skill-chip">React.js</span><span class="skill-chip">Next.js</span><span class="skill-chip">Tailwind CSS</span><span class="skill-chip">Bootstrap</span><span class="skill-chip">Responsive design</span><span class="skill-chip">Git & GitHub</span><span class="skill-chip">API integration</span>
+        </div>
+        <div class="mt-7 grid gap-4 sm:grid-cols-2">
+          <article class="focus-card"><span class="card-icon">✦</span><h3>Custom frontend development</h3><p>Responsive single-page and multi-page websites built around your needs.</p></article>
+          <article class="focus-card"><span class="card-icon">◈</span><h3>Design to code</h3><p>Converting Figma or PSD designs into polished HTML and React interfaces.</p></article>
+          <article class="focus-card"><span class="card-icon">▣</span><h3>Responsive redesign</h3><p>Improving existing layouts for mobile, tablet, and desktop screens.</p></article>
+          <article class="focus-card"><span class="card-icon">⌘</span><h3>Interactive UI & APIs</h3><p>Building useful UI components and API-connected web tools.</p></article>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Rabeea Zaheer Built with modern web standards.</p>
-    </footer>
+    <section id="projects" class="section-pad scroll-mt-24">
+      <div class="section-heading"><span class="section-kicker">Selected work</span><h2>Projects I’m proud of</h2><p>A few applications that show my frontend skills and problem-solving.</p></div>
+      <div class="grid gap-5 md:grid-cols-2">
+        <article class="project-card"><div class="project-visual weather-visual"><span>☀</span><small>WEATHER · FORECAST</small></div><div class="p-6"><div class="flex flex-wrap gap-2"><span class="tag">JavaScript</span><span class="tag">API</span><span class="tag">CSS</span></div><h3>Pakistan Weather App</h3><p>Weather updates for major cities in Pakistan, with current conditions and a forecast.</p><div class="project-actions"><a href="https://rabeeazaheer-dev.github.io/pakistan-weather-app/" target="_blank" rel="noopener noreferrer">Live demo ↗</a><a href="https://github.com/rabeeazaheer-dev/pakistan-weather-app" target="_blank" rel="noopener noreferrer">Source code ↗</a></div></div></article>
+        <article class="project-card"><div class="project-visual crypto-visual"><span>₿</span><small>CRYPTO · CONVERTER</small></div><div class="p-6"><div class="flex flex-wrap gap-2"><span class="tag">JavaScript</span><span class="tag">API</span><span class="tag">CSS</span></div><h3>Crypto Currency Converter</h3><p>A live crypto and currency exchange converter using public data APIs.</p><div class="project-actions"><a href="https://rabeeazaheer-dev.github.io/crypto-currency-converter/" target="_blank" rel="noopener noreferrer">Live demo ↗</a><a href="https://github.com/rabeeazaheer-dev/crypto-currency-converter" target="_blank" rel="noopener noreferrer">Source code ↗</a></div></div></article>
+        <article class="project-card"><div class="project-visual age-visual"><span>◷</span><small>AGE · CALCULATOR</small></div><div class="p-6"><div class="flex flex-wrap gap-2"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div><h3>Age Calculator</h3><p>A polished calculator that breaks down age into years, months, and days.</p><div class="project-actions"><a href="https://rabeeazaheer-dev.github.io/Age_Calculator/" target="_blank" rel="noopener noreferrer">Live demo ↗</a><a href="https://github.com/rabeeazaheer-dev/Age_Calculator" target="_blank" rel="noopener noreferrer">Source code ↗</a></div></div></article>
+        <article class="project-card"><div class="project-visual calc-visual"><span>＋</span><small>CALCULATOR · APP</small></div><div class="p-6"><div class="flex flex-wrap gap-2"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div><h3>Digital Calculator App</h3><p>A clean, responsive calculator for everyday mathematical operations.</p><div class="project-actions"><a href="https://rabeeazaheer-dev.github.io/Calculator/" target="_blank" rel="noopener noreferrer">Live demo ↗</a><a href="https://github.com/rabeeazaheer-dev/Calculator" target="_blank" rel="noopener noreferrer">Source code ↗</a></div></div></article>
+      </div>
+    </section>
+
+    <section id="contact" class="section-pad scroll-mt-24">
+      <div class="contact-banner mx-auto max-w-4xl rounded-3xl p-7 text-center sm:p-12"><span class="section-kicker">Have a project in mind?</span><h2 class="mt-3">Let’s create something <span class="gradient-text">great together.</span></h2><p class="mx-auto mt-4 max-w-xl text-slate-400">I’m happy to hear about opportunities, collaborations, or a project you’re planning.</p><div class="mt-7 flex flex-wrap justify-center gap-3"><a class="button-primary" href="mailto:rabeeazaheer9@gmail.com">Email me</a><a class="button-secondary" href="https://wa.me/923291345651" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div><div class="mt-6 text-sm text-slate-500"><a class="social-link" href="https://www.linkedin.com/in/rabeea-zaheer-codenova" target="_blank" rel="noopener noreferrer">LinkedIn</a><span class="px-2">·</span><a class="social-link" href="https://github.com/rabeeazaheer-dev" target="_blank" rel="noopener noreferrer">GitHub</a></div></div>
+    </section>
+  </main>
+
+  <footer class="mt-8 border-t border-white/5 py-7 text-center text-sm text-slate-500">© <span id="year"></span> Rabeea Zaheer · Built with care.</footer>
+  <script>
+    const roles = ['Frontend Developer', 'React Specialist', 'UI Builder'];
+    const output = document.getElementById('typedRole');
+    let roleIndex = 0, charIndex = 0, deleting = false;
+    function typeRole() {
+      const word = roles[roleIndex];
+      output.textContent = word.slice(0, charIndex);
+      if (!deleting && charIndex < word.length) { charIndex++; setTimeout(typeRole, 85); }
+      else if (!deleting) { deleting = true; setTimeout(typeRole, 1300); }
+      else if (charIndex > 0) { charIndex--; setTimeout(typeRole, 42); }
+      else { deleting = false; roleIndex = (roleIndex + 1) % roles.length; setTimeout(typeRole, 250); }
+    }
+    typeRole();
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuButton.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') === false;
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.textContent = open ? '×' : '☰';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.textContent = '☰';
+    }));
+  </script>
 </body>
 </html>
